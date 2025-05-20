@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - André Ribeiro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
+    header { background: #1f1f2e; text-align: center; padding: 2rem 1rem; }
+    header h1 { margin-bottom: 0.5rem; }
+    .img-perfil { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; margin-bottom: 1rem; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; padding: 1rem; background: #2c2c3e; }
+    nav a { color: white; text-decoration: none; font-weight: bold; padding: 0.5rem; transition: color 0.3s, border-bottom 0.3s; }
+    nav a:hover, nav a.active { color: #00d1b2; border-bottom: 2px solid #00d1b2; }
+    section { max-width: 900px; margin: 2rem auto; padding: 2rem; background: #1e1e2f; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    footer { text-align: center; padding: 2rem; background: #1f1f2e; color: #aaa; }
+    a { color: #00d1b2; }
+    #topo { position: fixed; bottom: 30px; right: 30px; background-color: #00d1b2; color: #121212; border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: none; z-index: 999; transition: background-color 0.3s; }
+    #topo:hover { background-color: #00a591; }
+    @media (max-width: 600px) {
+      section { margin: 1rem; padding: 1.5rem; }
+      nav ul { flex-direction: column; align-items: center; }
+      .img-perfil { width: 60px; height: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="andre-ribeiro.jpg/andre-ribeiro.jpg" alt="Foto de André Ribeiro" class="img-perfil">
+    <h1>André Ribeiro</h1>
+    <p>Desenvolvedor em formação | Análise e Desenvolvimento de Sistemas</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#sobre"><i class="fas fa-user"></i> Sobre</a></li>
+      <li><a href="#curriculo"><i class="fas fa-file-alt"></i> Currículo</a></li>
+      <li><a href="#formacao"><i class="fas fa-graduation-cap"></i> Formação</a></li>
+      <li><a href="#cursos"><i class="fas fa-laptop-code"></i> Cursos</a></li>
+      <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+    </ul>
+  </nav>
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>Olá! Sou o André Ricardo, estudante de Análise e Desenvolvimento de Sistemas e apaixonado por tecnologia. Após anos trabalhando na indústria metalúrgica, decidi mudar de carreira e mergulhar no universo da programação.</p>
+    <p>Atualmente estou no último semestre da graduação, estudando linguagens como <strong>Python</strong>, <strong>Java</strong> e <strong>JavaScript</strong>, além de temas como <strong>computação em nuvem</strong>, <strong>IoT</strong> e <strong>Big Data</strong>. Estou desenvolvendo um portfólio prático com projetos próprios e bootcamps, buscando minha primeira oportunidade como desenvolvedor ou analista de sistemas.</p>
+    <p>Sou movido por desafios, aprendizado contínuo e a vontade de aplicar a tecnologia para resolver problemas reais.</p>
+  </section>
+  <section id="curriculo">
+    <h2>Currículo</h2>
+    <p><a href="curriculo-andre-ribeiro.pdf" download>📄 Clique aqui para baixar meu currículo em PDF</a></p>
+  </section>
+  <section id="formacao">
+    <h2>Formação</h2>
+    <p>Graduando em Análise e Desenvolvimento de Sistemas pela Estácio – último semestre.</p>
+  </section>
+  <section id="cursos">
+    <h2>Cursos</h2>
+    <ul>
+      <li>Ambiente de Desenvolvimento e Primeiros Passos com Python – DIO</li>
+      <li>Computação em Nuvem | AWS Discovery Day – Estácio & AWS</li>
+      <li>Git e GitHub: Compartilhando e Colaborando em Projetos – Alura</li>
+      <li>Lógica de Programação: Mergulhe em Programação com JavaScript – Alura</li>
+      <li>Lógica de Programação: Explore Funções e Listas – Alura</li>
+    </ul>
+  </section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: andre27.ricardo@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/andre-r-ribeiro" target="_blank">linkedin.com/in/andreribeiro-dev</a></p>
+    <p>WhatsApp: <a href="https://wa.me/5511963346597" target="_blank">(11) 96334-6597</a></p>
+    <p>GitHub: <a href="https://github.com/Andrerr1980" target="_blank">github.com/Andrerr1980</a></p>
+  </section>
+  <footer>
+    <p>&copy; 2025 André Ribeiro</p>
+  </footer>
+  <button id="topo" title="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+  <script>
+    const links = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+      const btn = document.getElementById("topo");
+      btn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    window.addEventListener('load', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
+    document.getElementById("topo").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
